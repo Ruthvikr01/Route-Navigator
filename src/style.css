@@ -1,0 +1,55 @@
+:root{
+  --bg: #f4fbfd;
+  --panel: #ffffff;
+  --muted: #6b7785;
+  --accent: #1e88e5;
+  --dark: #071422;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#f3f7fa 0%, #f8fbfc 100%);
+  color:var(--dark);
+  font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 28px;
+  background:transparent;
+}
+.brand h1{ margin:0; font-size:20px; color:#1b6fb8; font-weight:700;}
+.brand .subtitle{ font-size:12px; color:var(--muted); margin-top:4px; }
+
+.controls{ display:flex; gap:12px; align-items:center; }
+.controls label{ font-size:13px; color:var(--dark); }
+.controls select{ padding:8px 10px; border-radius:8px; border:1px solid #e6eef5; background:white; min-width:220px; }
+.controls .primary{ padding:8px 14px; background:var(--accent); color:white; border:none; border-radius:10px; cursor:pointer; box-shadow:0 6px 20px rgba(30,136,229,0.18); }
+
+.main{ display:flex; gap:20px; padding:16px 28px; align-items:flex-start; }
+.map-area{ flex:1; position:relative; }
+.map-frame{
+  background:linear-gradient(180deg,#f6fbfd 0%, #eef6fa 100%);
+  border-radius:12px; padding:18px; box-shadow: 0 12px 40px rgba(32,60,80,0.06);
+  border:1px solid rgba(200,220,230,0.6);
+  height:720px; overflow:hidden;
+}
+.zoom-controls{ position:absolute; left:36px; top:150px; z-index:40; display:flex; flex-direction:column; gap:8px; }
+.zoom-controls button{ width:36px; height:36px; border-radius:8px; border:1px solid #e5eef6; background:white; font-weight:700; cursor:pointer; box-shadow:0 8px 20px rgba(18,40,60,0.04); }
+
+#mapSvg{ width:100%; height:100%; display:block; border-radius:6px; touch-action: none; }
+
+.sidebar{ width:360px; display:flex; flex-direction:column; gap:16px; }
+.card{ background:var(--panel); padding:16px; border-radius:12px; box-shadow: 0 8px 30px rgba(36,60,80,0.06); border:1px solid rgba(220,230,235,0.6); }
+.card h3{ margin:0 0 8px 0; font-size:16px; }
+.muted{ color:var(--muted); }
+#summaryBody p{ margin:6px 0; font-size:14px; }
+.stat{ font-weight:700; color:#0b53c3; }
+#segmentsBody ol{ padding-left:18px; margin:6px 0; color:#222; }
+#segmentsBody li{ margin:6px 0; font-size:14px; color:#2b3440; }

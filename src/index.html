@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Route Navigator — Vector USA Map</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="title">
+    <h1>Route Navigator</h1>
+    <small>CST region — graph algorithms</small>
+  </div>
+
+  <div class="controls">
+    <label>Source:
+      <select id="source" class="select"></select>
+    </label>
+
+    <label>Destination:
+      <select id="destination" class="select"></select>
+    </label>
+
+    <label>Algorithm:
+      <select id="algorithm" class="select">
+        <option value="BEST">Best Route</option>
+        <option value="BFS">BFS</option>
+        <option value="DFS">DFS</option>
+        <option value="PRIM">Prim</option>
+        <option value="KRUSKAL">Kruskal</option>
+        <option value="BELLMAN">Bellman-Ford</option>
+      </select>
+    </label>
+
+    <button id="showBtn" class="btn primary">Show Route</button>
+  </div>
+</header>
+
+<main class="main">
+  <section class="map-panel">
+    <div class="zoom-controls">
+      <button id="zoomIn" class="zoom-btn">+</button>
+      <button id="zoomOut" class="zoom-btn">−</button>
+    </div>
+
+    <div id="mapWrap" class="map-wrap">
+      <svg id="mapSvg" width="1200" height="760" viewBox="0 0 1200 760"></svg>
+    </div>
+  </section>
+
+  <aside class="info-panel">
+    <div class="card" id="summary">
+      <h3>Route Summary</h3>
+      <div id="summaryBody">
+        <p class="muted">No route selected</p>
+      </div>
+    </div>
+
+    <div class="card" id="segments">
+      <h3>Segments</h3>
+      <div id="segmentsBody"><p class="muted">No segments</p></div>
+    </div>
+  </aside>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
